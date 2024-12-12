@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html#explore-austraits-data",
+    "href": "index.html#explore-austraits-data",
+    "title": "{austraits} demo",
+    "section": "Explore AusTraits data",
+    "text": "Explore AusTraits data"
+  },
+  {
+    "objectID": "index.html#extract-data",
+    "href": "index.html#extract-data",
+    "title": "{austraits} demo",
+    "section": "Extract data",
+    "text": "Extract data"
+  },
+  {
+    "objectID": "index.html#join-data",
+    "href": "index.html#join-data",
+    "title": "{austraits} demo",
+    "section": "Join data",
+    "text": "Join data"
+  },
+  {
+    "objectID": "index.html#reshape-data",
+    "href": "index.html#reshape-data",
+    "title": "{austraits} demo",
+    "section": "Reshape data",
+    "text": "Reshape data"
+  },
+  {
+    "objectID": "index.html#visualise-data",
+    "href": "index.html#visualise-data",
+    "title": "{austraits} demo",
+    "section": "Visualise data",
+    "text": "Visualise data"
+  },
+  {
+    "objectID": "index.html#load-austraits-into-r",
+    "href": "index.html#load-austraits-into-r",
+    "title": "{austraits} demo",
+    "section": "Load AusTraits into R",
+    "text": "Load AusTraits into R"
+  }
+]

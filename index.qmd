@@ -1,0 +1,89 @@
+---
+title: "{austraits} demo"
+format: live-html
+engine: knitr
+webr: 
+  show-startup-message: false
+  show-header-message: false
+  packages:
+    - remotes
+    - austraits
+  repos:
+    - https://cloud.r-project.org/
+    - https://traitecoevo.r-universe.dev/
+---
+
+{{< include _extensions/r-wasm/live/_knitr.qmd >}}
+
+## Install austraits
+
+```{webr}
+remotes::install_github("traitecoevo/austraits")
+library(austraits)
+```
+
+
+## Load AusTraits into R
+
+```{webr}
+library(austraits)
+
+get_versions()
+```
+
+```{webr}
+austraits <- load_austraits(version = "6.0.0")
+```
+
+## Explore AusTraits data
+
+```{webr}
+summarise_database(austraits, "trait_name")
+```
+
+```{webr}
+lookup_context_property(austraits, "fire")
+```
+
+## Extract data
+
+```{webr}
+extract_taxa(austraits, taxon_name = "Acacia aneura") |> _["traits"]
+extract_data(austraits, "contexts", "context_property", "CO2") |> _["contexts"]
+```
+
+## Join data
+
+```{webr}
+extract_taxa(austraits, taxon_name = "Acacia aneura") |> 
+  join_location_coordinates() |> 
+  _["traits"]
+```
+
+## Reshape data
+
+```{webr}
+extract_taxa(austraits, taxon_name = "Acacia aneura") |> 
+  flatten_database()
+```
+
+```{webr}
+x <- extract_taxa(austraits, taxon_name = "Acacia aneura")
+y <- extract_taxa(austraits, taxon_name = "Banksia serrata")
+
+bind_databases(x, y) |> _["taxa"]
+```
+
+## Visualise data
+
+```{webr}
+extract_taxa(austraits, family = "Myrtaceae") |> 
+  plot_trait_distribution_beeswarm("stem_vessel_density", "dataset_id")
+```
+
+```{webr}
+austraits |> 
+  extract_trait("wood_density") |> 
+  plot_locations(feature = "basis_of_record")
+```
+
